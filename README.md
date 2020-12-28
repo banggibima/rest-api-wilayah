@@ -29,6 +29,7 @@ npm run server
 ├── .env
 ├── .gitignore
 ├── app.js
+├── LICENSE
 ├── package-lock.json
 ├── package.json
 └── README.md
