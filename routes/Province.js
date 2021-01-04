@@ -1,18 +1,18 @@
 import { Router } from 'express'
 import {
-    readProvince,
     readProvinces,
     createProvince,
+    readProvince,
     updateProvince,
     deleteProvince
 } from '../controllers/Province'
 
 const provinceRouter = Router()
 
-provinceRouter.get('/:id', readProvince)
 provinceRouter.get('/', readProvinces)
 provinceRouter.post('/add', createProvince)
-provinceRouter.post('/edit', updateProvince)
+provinceRouter.get('/:id', readProvince)
+provinceRouter.put('/:id', updateProvince)
 provinceRouter.delete('/:id', deleteProvince)
 
 export default provinceRouter

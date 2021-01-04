@@ -1,16 +1,5 @@
 import Island from '../models/Island'
 
-const readIsland = (req, res) => {
-    Island
-        .findById(req.params.id)
-        .then(island => res.json(island))
-        .catch(err => {
-            res
-                .status(400)
-                .json(`Kesalahan: ${err}`)
-        })
-}
-
 const readIslands = (req, res) => {
     Island
         .find()
@@ -41,9 +30,20 @@ const createIsland = (req, res) => {
         })
 }
 
-const updateIsland = (req, res) => {
+const readIsland = (req, res) => {
     Island
         .findById(req.params.id)
+        .then(island => res.json(island))
+        .catch(err => {
+            res
+                .status(400)
+                .json(`Kesalahan: ${err}`)
+        })
+}
+
+const updateIsland = (req, res) => {
+    Island
+        .findByIdAndUpdate(req.params.id)
         .then(island => {
             island.code_island = req.body.code_island
             island.name = req.body.name
@@ -76,9 +76,9 @@ const deleteIsland = (req, res) => {
 }
 
 export {
-    readIsland,
     readIslands,
     createIsland,
+    readIsland,
     updateIsland,
     deleteIsland
 }

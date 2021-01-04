@@ -1,16 +1,5 @@
 import District from '../models/District'
 
-const readDistrict = (req, res) => {
-    District
-        .findById(req.params.id)
-        .then(district => res.json(district))
-        .catch(err => {
-            res
-                .status(400)
-                .json(`Kesalahan: ${err}`)
-        })
-}
-
 const readDistricts = (req, res) => {
     District
         .find()
@@ -47,9 +36,20 @@ const createDistrict = (req, res) => {
         })
 }
 
-const updateDistrict = (req, res) => {
+const readDistrict = (req, res) => {
     District
         .findById(req.params.id)
+        .then(district => res.json(district))
+        .catch(err => {
+            res
+                .status(400)
+                .json(`Kesalahan: ${err}`)
+        })
+}
+
+const updateDistrict = (req, res) => {
+    District
+        .findByIdAndUpdate(req.params.id)
         .then(district => {
             district.code_island = req.body.code_island
             district.code_province = req.body.code_province
@@ -85,9 +85,9 @@ const deleteDistrict = (req, res) => {
 }
 
 export {
-    readDistrict,
     readDistricts,
     createDistrict,
+    readDistrict,
     updateDistrict,
     deleteDistrict
 }

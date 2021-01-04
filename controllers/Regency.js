@@ -1,16 +1,5 @@
 import Regency from '../models/Regency'
 
-const readRegency = (req, res) => {
-    Regency
-        .findById(req.params.id)
-        .then(regency => res.json(regency))
-        .catch(err => {
-            res
-                .status(400)
-                .json(`Kesalahan: ${err}`)
-        })
-}
-
 const readRegencies = (req, res) => {
     Regency
         .find()
@@ -38,6 +27,17 @@ const createRegency = (req, res) => {
     newRegency
         .save()
         .then(() => res.json('Data kota / kabupaten berhasil ditambahkan'))
+        .catch(err => {
+            res
+                .status(400)
+                .json(`Kesalahan: ${err}`)
+        })
+}
+
+const readRegency = (req, res) => {
+    Regency
+        .findById(req.params.id)
+        .then(regency => res.json(regency))
         .catch(err => {
             res
                 .status(400)
@@ -82,9 +82,9 @@ const deleteRegency = (req, res) => {
 }
 
 export {
-    readRegency,
     readRegencies,
     createRegency,
+    readRegency,
     updateRegency,
     deleteRegency
 }

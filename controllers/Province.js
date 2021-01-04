@@ -1,16 +1,5 @@
 import Province from '../models/Province'
 
-const readProvince = (req, res) => {
-    Province
-        .findById(req.params.id)
-        .then(province => res.json(province))
-        .catch(err => {
-            res
-                .status(400)
-                .json(`Kesalahan: ${err}`)
-        })
-}
-
 const readProvinces = (req, res) => {
     Province
         .find()
@@ -43,9 +32,20 @@ const createProvince = (req, res) => {
         })
 }
 
-const updateProvince = (req, res) => {
+const readProvince = (req, res) => {
     Province
         .findById(req.params.id)
+        .then(province => res.json(province))
+        .catch(err => {
+            res
+                .status(400)
+                .json(`Kesalahan: ${err}`)
+        })
+}
+
+const updateProvince = (req, res) => {
+    Province
+        .findByIdAndUpdate(req.params.id)
         .then(province => {
             province.code_island = req.body.code_island
             province.code_province = req.body.code_province
@@ -79,9 +79,9 @@ const deleteProvince = (req, res) => {
 }
 
 export {
-    readProvince,
     readProvinces,
     createProvince,
+    readProvince,
     updateProvince,
     deleteProvince
 }
