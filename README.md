@@ -9,7 +9,8 @@ npm run server
 ```
 
 ```bash
-# Menjalankan REST API dengan cara menulis perintah http://localhost:5000 lalu ditambahkan dengan perintah URL yang telah ditulis dibawah 
+# Menjalankan REST API dengan cara menulis perintah http://localhost:5000 
+# lalu ditambahkan dengan perintah URL yang telah ditulis dibawah 
 +--------+---------------+-----------------------------------------------------------+
 | Metode | URL           | Aksi                                                      |
 +--------+---------------+-----------------------------------------------------------+
