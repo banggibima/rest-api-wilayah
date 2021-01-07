@@ -47,7 +47,7 @@ const readRegency = (req, res) => {
 
 const updateRegency = (req, res) => {
     Regency
-        .findById(req.params.id)
+        .findByIdAndUpdate(req.params.id)
         .then(regency => {
             regency.code_island = req.body.code_island
             regency.code_province = req.body.code_province

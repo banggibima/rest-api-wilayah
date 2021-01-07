@@ -28,9 +28,12 @@ app.listen(port, () => {
 
 mongoose
     .connect(uri, {
+        dbName: 'wilayah',
+        user: 'banggidoe',
+        pass: 'banggidoe',
         useNewUrlParser: true,
-        useCreateIndex: true,
-        useUnifiedTopology: true
+        useUnifiedTopology: true,
+        useFindAndModify: false
     })
     .then(() => {
         console.log('Database Atlas MongoDB berhasil terhubung')
