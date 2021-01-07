@@ -35,6 +35,7 @@ npm run server
 | PUT    | /regency/id   | Mengubah sebuah data kota / kabupaten berdasarkan id-nya  |
 | DELETE | /regency/id   | Menghapus sebuah data kota / kabupaten berdasarkan id-nya |
 +--------+---------------+-----------------------------------------------------------+
+```
 
 ```bash
 # Struktur file
