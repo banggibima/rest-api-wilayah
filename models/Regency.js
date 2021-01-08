@@ -5,6 +5,8 @@ const regencySchema = new Schema({
     code_province: { type: String, require: true },
     code_regency: { type: String, require: true },
     name: { type: String, required: true }
+}, {
+    timestamps: true
 })
 
 const Regency = model('regencie', regencySchema)

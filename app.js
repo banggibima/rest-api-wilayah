@@ -29,7 +29,7 @@ app.listen(port, () => {
 
 mongoose
     .connect(uri, {
-        dbName: 'wilayah',
+        dbName: 'api-wilayah',
         user: 'banggidoe',
         pass: 'banggidoe',
         useNewUrlParser: true,

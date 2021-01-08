@@ -6,6 +6,8 @@ const districtSchema = new Schema({
     code_regency: { type: String, require: true },
     code_district: { type: String, require: true },
     name: { type: String, required: true }
+}, {
+    timestamps: true
 })
 
 const District = model('district', districtSchema)
